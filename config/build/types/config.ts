@@ -7,6 +7,7 @@ export interface BuildPaths {
     prod: string;
   };
   html: string;
+  src: string;
 }
 
 export interface EnvOptions {

@@ -4,14 +4,21 @@ import s from './Button.module.scss';
 
 export enum ButtonTheme {
   CLEAR = 'clear',
-};
+}
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className: string;
   theme: ButtonTheme;
-};
+}
 
-export const Button: FC<ButtonProps> = ({ className = '', type, children, onClick, theme, ...rest }) => {
+export const Button: FC<ButtonProps> = ({
+  className = '',
+  type,
+  children,
+  onClick,
+  theme,
+  ...rest
+}) => {
   return (
     <button
       type={type}
@@ -21,5 +28,5 @@ export const Button: FC<ButtonProps> = ({ className = '', type, children, onClic
     >
       {children}
     </button>
-  )
-}
+  );
+};

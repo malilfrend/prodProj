@@ -3,7 +3,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
@@ -15,7 +14,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     use: [
       options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: (resPath: string): boolean => Boolean(resPath.includes('.module.')),
@@ -25,7 +24,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
           },
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
@@ -43,10 +42,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  return [
-    typescriptLoader,
-    cssLoader,
-    svgrLoader,
-    fileLoader,
-  ]
+  return [typescriptLoader, cssLoader, svgrLoader, fileLoader];
 }

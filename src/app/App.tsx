@@ -1,5 +1,4 @@
-import React, { Suspense } from 'react'
-
+import React, { Suspense } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from './providers/ThemeProvider';
@@ -16,12 +15,11 @@ export const App: React.FC = () => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <div className='content-page'>
+        <div className="content-page">
           <Sidebar />
           <AppRouter />
         </div>
       </Suspense>
-    </div >
-  )
+    </div>
+  );
 };
-

@@ -1,8 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 
 import s from './Navbar.module.scss';
@@ -15,9 +13,11 @@ export const Navbar: FC<NavbarProps> = ({ className = '' }) => {
   return (
     <div className={classNames(s.navbar, {}, [className])}>
       <div className={s.linksBlock}>
-        <AppLink to='/' className={s.main} theme={AppLinkTheme.PRIMARY}>Home</AppLink>
-        <AppLink to='/about'>About</AppLink>
+        <AppLink to="/" className={s.main} theme={AppLinkTheme.PRIMARY}>
+          Home
+        </AppLink>
+        <AppLink to="/about">About</AppLink>
       </div>
     </div>
-  )
-}
+  );
+};
